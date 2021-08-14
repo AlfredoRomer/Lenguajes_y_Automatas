@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/Programacion.png" type="image/x-icon">
+    <title>Lenguajes y Automatas I</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <div class="textos">
+            <h1 class="titulo">Lenguajes y Automatas I</h1>
+            <h3 class="sub">3611 - Tesvg</h3>
+            
+        </div>
+        <div class="sesgoabajo"></div>
+    </header>
+    <main>
+        <section class="acerca-de">
+            <div class="contenedor">
+                <h2 class="sobre-nosotros">1.- Introduccion a la teoria de lenguajes formales</h2>
+                <div class="contenido-textos">
+                    <h3><span> </span> </h3>
+                    
+                    <h3 class="subtitulo">1.1 Alfabeto</h3>
+                    
+                    <p>Un alfabeto es un conjunto de símbolos finito y no vacío. Convencionalmente, utilizamos el símbolo Σ para
+                        designar un alfabeto. Entre los alfabetos más comunes se incluyen los siguientes.
+                        <p>1. Σ = {0,1}, el alfabeto binario.</p>
+                        <p>2. Σ = {a,b,...,z}, el conjunto de todas las letras minúsculas.</p>
+                        <p>3. El conjunto de todos los caracteres ASCII o el conjunto de todos los caracteres ASCII imprimibles.</p> 
+                        <div class="imagen">
+                        <img src="img/Alfa.png" alt="">
+                        </div>
+                        <h3 class="subtitulo"><span>1.2</span>Cadenas</h3>
+                    <p>Una cadena de caracteres (que también se denomina en ocasiones palabra) es una secuencia finita de símbolos seleccionados de algún alfabeto.
+                        Una cadena o palabra es una secuencia finita de símbolos que pertenecen a un alfabeto y comúnmente se denota con la letra.</p>
+                        <p>EJEMPLO: si ∑= {0,1}, entonces ∑1= {0,1}, ∑2= {00, 01, 10, 11}, ∑3= {000, 001, 010, 011, 100, 101, 110, 111}, etc.</p>
+                    
+                        <h3 class="cadena"><br />LA CADENA VACÍA</h3>
+                        <p>La cadena vacía es aquella cadena que presenta cero apariciones de símbolos. Esta cadena, designada por £, es una cadena que puede construirse en cualquier alfabeto</p>
+                        <p>EJEMPLO: observe que ∑0= {£}, independientemente de cuál sea el alfabeto ∑. Es decir, £ es la única cadena cuya longitud es 0.</p>
+                        <div class="img">
+                        <img src="img/cadena.png" alt="">
+                         </div>
+                        <h3 class="subtitulo"><span>1.3</span>Lenguajes, Tipos y Herramientas</h3>
+                    <p>Es un conjunto de cadenas, de todas las seleccionadas de un Σ*. donde Σ determinado el alfabeto se denomina lenguaje. Si Σ es un alfabeto y L Σ*, entonces L es un lenguaje de Σ. 
+                    
+                        <p><br />Observe que un lenguaje de Σ no necesita incluir cadenas con todos los símbolos de Σ, ya que una vez que hemos esta que L es un 
+                        lenguaje de Σ, también sabemos que es un lenguaje de cualquier alfabeto que sea un súper conjunto de Σ.</p>
+                     
+                        <p><br />La elección del termino "lenguaje" puede parecer extraña. Sin embargo, los lenguajes habituales pueden interpretarse como conjuntos de cadenas. 
+                        Un ejemplo seria el Ingles, donde la colección de las palabras correctas inglesas es un conjunto de cadenas del alfabeto que consta de todas las letras. 
+                        Otro ejemplo es el lenguaje C. </p>
+                     <div class="img">
+                     <img src="img/lenguaje.png" alt="">
+                     </div>
+                     <h3 class="cadena">Herramientas Computacionales Ligadas con Lenguajes</h3>
+                    <P>1- Diagramas Funcionales.</P>
+                     <P>2- Interpretación de Datos.</P>
+                     <P>3- Bases de Datos.4- Algoritmos.</P>
+                       <P>5- Seudo-códigos</P>
+                     <h3 class="subtitulo"><br />1.4 Estructura de un traductor</h3>
+                     <p>Un traductor es un programa que tiene como entrada un texto escrito en un lenguaje (lenguaje fuente) y como salida 
+                         produce un texto escrito en un lenguaje (lenguaje objeto) que preserva el significado de origen.</p>
+                         <h3 class="cadena"><br />Ensambladores</h3>
+                         <p>El programa ensamblador es el programa que realiza la traducción de un programa escrito en ensamblador a lenguaje máquina.
+                            Tipos de ensambladores:</p>
+                            <p>*Ensambladores básicos.
+                             <p>*Ensambladores modulares, o macro ensambladores</p>
+                                <p></p>*Ensambladores modulares 32-bits o de alto nivel</p>
+                                <h3 class="cadena"><br />Compiladores</h3>
+                                 <p>Un compilador es un programa informático que traduce un programa escrito en un lenguaje de programación a otro 
+                                     lenguaje de programación, es decir programa que permite traducir el 
+                                     código fuente de un programa en lenguaje de alto nivel, a otro lenguaje de nivel inferior (lenguaje máquina).</p>
+                                     <div class="img">
+                                     <img src="img/traductor.png" alt="">
+                                    </div>
+                    <h3 class="subtitulo"><br />1.5 Fases de un Compilador</h3>
+                    <p>Un compilador es un programa traductor cuya función es traducir (compilar) un programa fuente
+                        escrito en algún lenguaje de alto nivel a lenguaje máquina. Este programa 
+                        traducido o programa objeto, normalmente es guardado en memoria secundaria
+                        en forma ejecutable y es cargado a memoria principal cada vez que requiera ser 
+                        ejecutado.</p>
+                    <p><br />Al igual que el compilador, el intérprete traduce un programa fuente escrito en 
+                        algún lenguaje de alto nivel, pero con la diferencia que cada instrucción es 
+                        ejecutada inmediatamente, sin generar un programa en lenguaje de máquina</p>
+     
+                  <p><br />En general la compilación es un proceso más eficiente que la interpretación. Esto 
+                    se debe a que las sentancias dentro de un ciclo deben ser reinterpretadas cada 
+                    vez que se ejecutan por un intérprete. En cambio con un compilador, cada 
+                    sentencia es traducida a lenguaje de máquina sólo una vez</p>
+                    <div class="img">
+                    <img src="img/tr.png" alt="">
+                       </div>
+
+                        <h2 class="sobre-nosotros">2.-Expreciones Regulares</h2>
+                       
+                        <h3 class="subtitulo">2.1 Definicion formal de una ER</h3>
+                    <p>Es un equivalente algebraico para un autómata
+                    Utilizado en muchos lugares como un lenguaje para describir patrones en texto que son sencillos pero muy útiles.
+                       Pueden definir exactamente los mismos lenguajes que los autómatas pueden describir: Lenguajes regulares.</p>
+                       <p><br />Ofrecen algo que los autómatas no: Manera declarativa de expresar las cadenas que queremos aceptar.
+                        Dado un alfabeto Dado un alfabeto Σ, una , expresión regular sobre expresión regular sobre Σ se define de forma recursiva:</p>
+                        <p><br />ER primitivas: Φ, λ, {a | a ЄЄЄ Σ Є}
+                            Si α y β son ER, entonces son también ER: α + β (unión), α β (concatenación), α* (cierre), (α).
+                            No existen otras reglas para la construcción de ER sobre Σ.
+                            Ejemplos de usos.</p>
+                            <div class="img">
+                            <img src="img/ER.PNG" alt="" class="">
+                        </div>
+
+                    <h3 class="subtitulo"><br />2.2 Diseño de ER</h3>
+                    <h3 class="cadena">Union o Alternativa</h3>
+                    <p>Consideremos dos lenguajes diferentes definidos sobre el mismo alfabeto L1 ⊂ W(∑) y L2 ⊂ W(∑). 
+                        Se denomina unión de ambos lenguajes al lenguaje formado por las palabras de ambos lenguajes:</p>
+                        <p><br />L1 U L2={ x | x ∈ L1 ó x ∈ L2}</p>
+                        <h3 class="cadena"><br />Concatenación:</h3>
+                         <p>Consideremos dos lenguajes definidos sobre el mismo alfabeto, L1 y L2. La concatenación o producto de estos lenguajes es el lenguaje L1 L2= { xy / x ∈ L1 y x ∈ L2} Las palabras de este 
+                            lenguaje estarán formadas al concatenar cada una palabra del primero de los lenguajes con otra del segundo.</p>
+                          <p><br />La concatenación de lenguajes con el lenguaje vació es ΦL = L Φ = Φ</p>
+                          <h3 class="cadena"><br />Potencia de un lenguaje:</h3>
+                           <p>Se define la potencia i-ésima de un lenguaje a la operación de concatenarlo consigo mismo i veces.</p>
+                           <p> Li= LLL ....L
+
+                           <p> |------------| </p>
+
+                           <p> i</p>
+
+                    <h3 class="subtitulo"><br />2.3 Aplicaciones en problemas reales</h3>
+                    <p>Los autómatas y las expresiones regulares tienen diversas aplicaciones en el ámbito de las ciencias de la 
+                        computación como en la seguridad de redes, la generación de código, analizadores de textos, entre otros.</p>
+                    <p><br />Autómatas finitos no determinísticos con transiciones etiquetadas
+                        Dada una expresión regular al pasar al autómata resultante, dicho autómata debe ser capaz de reconocer si determinada 
+                        cadena pertenece o no al lenguaje que define la expresión regular inicial.</p>
+                     <p><br />Este proceso presenta el problema de no poder determinar la posición exacta de sub-expresión de la
+                        expresión regular cuando la cadena si coincide con el lenguaje, existen algoritmos para resolver ese problema pero estos poseen complejidades muy elevadas.</p>
+                        
+
+                        <h3 class="cadena"><br />Evitando la formación de latch en el reconocimiento de expresiones regulares.</h3>
+                        <p>En algunos de los reconocedores de expresiones regulares se presentan problemas debido a que se producen latches o “pestillos” esto es una consecuencia que se da debido a la 
+                        interacción entre celular o celdas en el compilador lo cual altera el correcto funcionamiento del reconocedor.</p>
+                        <p><br />Por ello la idea es realizar una transformación que elimine la expresión que ocasiona la aparición del latch o pestillo , a diferencia de las soluciones 
+                        anterior que agrandaban los reconocedores y alteraban la velocidad en la que trabajaba el reconocedor.</p>
+                        <p><br />Una de las principales aplicaciones de los hermanos Deitel, son las expresiones regulares que facilitan la construcción de un compilador.A menudo se utiliza una expresión regular larga y compleja para validar 
+                        la sintaxis de un programa. Si el código del programa no concuerda con la expresión regular, el compilador sabe que hay un error de sintaxis dentro del código.</p>
+                       <p><br />Generalmente, convierten la expresión regular a un autómata finito no determinista y después construyen el autómata finito determinista.Otra aplicación del mismo libro es en los editores de texto. 
+                        También encontramos a las expresiones regulares en la biología molecular. También hay esfuerzos importantes para tratar de representar cadenas como generadas por expresiones regulares o por lenguajes regulares.</p>
+                       
+                        <h2 class="sobre-nosotros">3.-Autómatas Finitos</h2>
+                        <h3 class="subtitulo"><br />3.1 Conceptos: Definición y Clasificación de Autómata Finito (AF).</h3>
+                    <p>
+                        Un autómata finito es un modelo matemático de una máquina que acepta cadenas de un
+                        lenguaje definido sobre un alfabeto A. Consiste en un conjunto finito de estados y un conjunto
+                        de transiciones entre esos estados, que dependen de los símbolos de la cadena de entrada. El
+                        autómata finito acepta una cadena x si la secuencia de transiciones correspondientes a los
+                        símbolos de x conduce desde el estado inicial a un estado final.</p>
+                        
+                       <p><br /> Si para todo estado del autómata existe como máximo una transición definida para cada
+                        símbolo del alfabeto, se dice que el autómata es determinístico (AFD). Si a partir de algún
+                        estado y para el mismo símbolo de entrada, se definen dos o más transiciones se dice que el
+                        autómata es no determinístico (AFND).
+                        Formalmente un autómata finito se define como una 5-upla.</p> 
+                        <p><br/>M = E, A, δ, e0, F   donde:</p>
+                        <p>E: conjunto finito de estados</p>
+                        <p>A: alfabeto o conjunto finito de símbolos de entrada</p>
+                        <p>δ: función de transición de estados, que se define como</p>
+                        <p>- δ: E x A → E         si el autómata es determinístico</p>
+                        <p> - δ: E x A → P(E)    si el autómata es no determinístico (P(E) es el conjunto potencia </p>
+                        <p>                        de E, es decir el conjunto de todos los subconjuntos de E)</p>
+                        <p>e0: estado inicial; e0  ∈ E</p>
+                        <p>F: conjunto de estados finales o estados de aceptación; F ⊆ E</p>
+
+                        <b><br />Generalmente se asocia con cada autómata un grafo dirigido, llamado diagrama de transición
+                            de estados. Cada nodo del grafo corresponde a un estado. El estado inicial se indica mediante
+                            una flecha que no tiene nodo origen. Los estados finales se representan con un círculo doble.
+                            Si existe una transición del estado ei al estado ej para un símbolo de entrada a, existe entonces
+                            un arco rotulado a desde el nodo ei al nodo ej; es decir que δ(ei, a) = ej, se representa en el
+                            diagrama.</b>
+                            <div class="img">
+                            <img src="img/ATF.png" alt="" class="">
+                            </div>
+                        <h3 class="subtitulo"><br />3.2 Conversión de un autómata finito no determinista (AFND) a autómata finito determinista (AFD).</h3>
+                    <p>Se observa que el AFN de la siguiente imagen, tiene dos transiciones
+                        desde el estado “0” con la entrada “a”; es decir, puede ir al estado
+                        “0” o al 1. Igualmente, el AFN de la Figura 3 tiene dos transiciones
+                        en ?  desde el estado “0”.</p>
+                        <div class="img">
+                        <img src="img/fig.png" alt="" class="">
+                        </div>
+                        <p><br />Ahora se introduce un algoritmo para construir a partir de un AFN
+                        un AFD que reconozca el mismo lenguaje. Este algoritmo se le
+                        conoce como construcción de subconjuntos, es útil para simular
+                        un AFN por medio de un programa de computador.</p>
+                        <p><br />Algoritmo 2: Construcción de subconjuntos. Construcción de un
+                            AFD a partir de un AFN. </p>
+                            <p><br />Entrada. Un AFN N. </p>
+                            <p><br />Salida. Un AFD D que acepta el mismo lenguaje.</p>
+                            <p><br/>Método. El algoritmo construye una tabla de transiciones tranD
+                                para “D”. Cada estado del AFD es un conjunto de estados del
+                                AFN y se construye tranD de modo que “D” simulará en paralelo
+                                todos los posibles movimientos que “N” puede realizar con una
+                                determinada cadena de entrada.</p>
+                    <h3 class="subtitulo"><br />3.3 Representacion de ER usando AFND.</h3>
+                    <p>Las expresiones regulares (E), son una
+                        forma más de expresar las cadenas (L), que se aceptan L(E).
+                        Se puede construir un AFND para cualquier lenguaje que acepte la expresión regular L(E).
+                        Algunas variantes se precentan acontinuación:</p>
+                        <p><br />E = ∅;  no existe cadena que pueda ser representada por la expresión; por lo tanto no
+                            existe AF que lo pueda representar.</p>
+                            <p><br />E =  ε;  Las cadenas que acepta esta expresión, son las vacías, es decir no contiene ningún
+                                símbolo y en el AF el estado inicial también es el estado de aceptación.</p>
+                                <p><br>E =  {x; x pertenece al alfabeto}; y si cumple con las condiciones de la expresión regular
+                                    de la cadena se acepta.</p>
+                              <p><br />Para la expresión regular (x|y) xy, el alfabeto ∑ = {x, y}</p>
+                              <div class="img">
+                              <img src="img/f2.png" alt="" class="">
+                            </div>
+                            <p><br />Las cadenas que acepta el AFND pueden ser: L(AFND) = L(ER) = {xy, xxyyxy,  
+                                yyyyxy, …}</p>
+                                <p>La cadena xy hace el recorrido al estado de aceptación iniciando en q0, en q0 sigue por
+                                    la arista con etiqueta x, que corresponde al primer símbolo de la cadena, llega a q1, se lee el
+                                    siguiente símbolo que es y, el cual tiene una salida a q2, no hay más símbolos en la cadena y
+                                    el control del AF está en q2 por lo tanto la cadena xy se acepta en este AFND cumpliendo
+                                    con la expresión regular.
+                                    Para la ER = (a|b|c)ca
+                                    *
+                                    , L(ER) = {aca, bcaa, cca, cc} y su diagrama de transiciones:</p>
+                                    <div class="img">
+                                    <img src="img/f3.png" alt="" class="">
+                                    </div>
+
+                    <h3 class="subtitulo"><br />3.4 Minimizacion de estados en un AF</h3>
+                     <p>La minimización es un proceso que nos 
+                        permite encontrar, para un dado
+                        autómata finito M, un autómata finito M’
+                        con las siguientes propiedades:  </p>
+                        <p><br />Si M y M’comienzan por sus estados
+                            iniciales, producirán las mismas salidas
+                            para las mismas entradas.
+                            De ser posible M’tendrámenos estados
+                            que M.</p>
+                            <p><br />Si esto no es posible, entonces M ya es un
+                                autómata mínimo.</p>
+                                <p>Los estados inalcanzables son aquellos
+                                    que no pueden alcanzarse desde el
+                                    estado inicial, independientemente de
+                                    los símbolos de entrada.
+                                    Los estados inalcanzables pueden ser
+                                    removidos.</p>
+                                    <p><br />Tabla para la función de transición:</p>
+                                    <div class="img">
+                                    <img src="img/tab.png" alt="" class="">
+                                    <img src="img/f4.png" alt="" class="">
+                                </div>
+                    <h3 class="subtitulo"><br />3.5 Aplicaciones (definicion de un caso de estudio).</h3>
+                    <p>• Interruptor de luz</p>
+                        <p>• Control de máquinas de bebidas</p>
+                       <p>• Analizadores/generadores de palabras</p>
+                        <p>• Control de las tareas de un robot</p>
+                        <p>• Búsqueda y sustitución de palabras</p>
+                        <p>• Tratamiento de masas de textos</p>
+                        <p>• Analizadores léxicos de compiladores y traductores</p>
+                        <p>• etc..</p>
+                        <p><br />Máquina de bebidas:
+                            <p>1. Las bebidas cuestan 25 céntimos.</p>
+                            <p>2. Monedas que admite la máquina:</p>
+                            <p>1. De cuarto, 25 céntimos (Q).</p>
+                            <p>2. Dimea, 10 céntimos (D).</p>
+                            <p>3. Nickel, 5 céntimos (N).</p>
+                            <p>3. La máquina acepta cualquier combinación
+                            de monedas hasta 25 céntimos.</p>
+                            <p>4. La máquina requiere la cantidad exacta.</p>
+                            <div class="img">
+                            <img src="img/f5.png" alt="" class="">
+                            </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="galeria">
+            <div class="sesgoarriba"></div>
+            <div class="imagenes none">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="imagenes">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="imagenes">
+                <img src="img/3.jpg" alt="">
+                <div class="encima">
+                    <h2>Lenguajes y Automatas</h2>
+                    <div></div>
+                </div>
+            </div>
+            <div class="imagenes">
+                <img src="img/4.jpg" alt="">
+                             
+                </div>
+                <div class="imagenes none">
+                    <img src="img/5.jpg" alt="">
+                </div>
+
+
+            <div class="sesgoabajo"></div>
+        </section>
+        <section class="parte_dos">
+            <div class="contenedor">
+                <h2 class="sobre-nosotros">4.- Análisis Léxico</h2>
+                <h3 class="subtitulo"><br />4.1 Funciones del analizador léxico.</h3>
+                    <p>El analizador léxico es la primera fase de un compilador.
+                        Su principal función consiste en leer los caracteres de entrada y elaborar como salida una secuencia de componentes léxicos que utiliza el analizador 
+                        sintáctico para hacer el análisis. Esta interacción, suele aplicarse convirtiendo al analizador léxico en una subrutina o corrutina del analizador sintáctico. 
+                        Recibida la orden "obtén el siguiente componente léxico" del analizador sintáctico, el analizador léxico lee los caracteres de entrada hasta que pueda identificar 
+                        el siguiente componente léxico..</p> 
+                        <p><br />Funciones secundarias.</p>
+                        <p>Como el analizador léxico es .la parte del compilador que lee el texto fuente. También puede realizar ciertas funciones secundarias en la 
+                            interfaz del usuario, como eliminar del programa fuente comentarios y espacios en blanco en forma de caracteres de espacio en blanco, 
+                            caracteres TAB y de línea nueva. Otra función es relacionar os mensajes de error del compilador con el programa fuente. Por ejemplo, 
+                            el analizador léxico puede tener localizado el número de caracteres de nueva línea detectados, de modo que se pueda asociar un número de 
+                            línea con un mensaje de error.</p>
+                            <div class="img">
+                            <img src="img/f6.png" alt="" class="">
+                            </div>
+                        <h3 class="subtitulo"><br />4.2 Componentes léxicos, patrones y lexemas.</h3>
+                        <p>Un token es un par que consiste en un nombre de token y un valor de atributo opcional. El nombre del token es un símbolo abstracto 
+                            que representa un tipo de unidad léxica; por ejemplo, una palabra clave específica o una secuencia de caracteres de entrada que 
+                            denotan un identificador. Los nombres de los tokens son los símbolos de entrada que procesa el analizador sin táctico. A partir de este momento, 
+                            en general escribiremos el nombre de un token en negrita. Con frecuencia nos referiremos a un token por su nombre..</p> 
+                            <p><br /> Un patrón: es una descripción de la forma que pueden tomar los lexemas de un token. En el caso de una palabra clave como token, 
+                            el patrón es sólo la secuencia de caracteres que forman la palabra clave. Para los identificadores y algunos otros tokens, el patrón es 
+                            una estructura más compleja que se relaciona mediante muchas cadenas.</p>
+                            <p><br />Un lexema: es una secuencia de caracteres en el programa fuente, que coinciden con el patrón para un token y 
+                                que el analizador léxico identifica como una instancia de ese token.</p>
+                                <div class="img">
+                                <img src="img/f7.png" alt="" class="">
+                            </div>
+                            <h3 class="subtitulo"><br />4.3 Creacion de Tabla de tokens.</h3>
+                        <p>Tabla: conjunto de pares clave-valor, llamados elementos de la tabla. La tabla de símbolos es una componente necesaria de un compilador. 
+                            Al declarar un identificador (normalmente una sola vez), éste es insertado en la tabla. Cada vez que se utilice el identificador se realizará 
+                            una búsqueda en la tabla para obtener la información asociada (el valor)..</p> 
+                            <p><br />*Búsqueda: dada la clave de un elemento, encontrar su valor.</p>
+                                <p>*Inserción: Dado un par clave-valor, añadir un elemento nuevo a la tabla.</p>
+                                <p>*Cambio de valor: Buscar el elemento y cambiar su valor.</p>
+                                <p>*Borrado: Eliminar un elemento de la tabla.</p>
+                                <p>*Longitud de búsqueda (o tiempo de acceso)</p>
+
+                                <p><br />De una clave: Li = número de comparaciones con elementos de la tabla para encontrar esa clave. Máxima: 
+                                    LM = número máximo de comparaciones para encontrar cualquier clave. Media (esperada): Lm = número medio de 
+                                    comparaciones para encontrar un valor.</p>
+                                    <p><br />Si la frecuencia de todas las claves es la misma:</p>
+
+                                        <p><br />Lm = (S Li)/N</p>
+                                        
+                                        <p><br />Si la frecuencia de todas las claves no es la misma:</p>
+                                        
+                                        <p><br />Lm = S pi.Li</p>
+
+                            <h3 class="subtitulo"><br />4.4 Errores léxicos.</h3>
+                        <p>El análisis léxico constituye la primera fase, aquí se lee el programa fuente de izquierda a derecha y se agrupa 
+                            en componentes léxicos (tokens), que son secuencias de caracteres que tienen un significado. Además, todos los 
+                            espacios en blanco, líneas en blanco, comentarios y demás información innecesaria se elimina del programa fuente. 
+                            También se comprueba que los símbolos del lenguaje (palabras clave, operadores,…) se han escrito correctamente..</p>
+
+                            <p><br />Como la tarea que realiza el analizador léxico es un caso especial de coincidencia de patrones, se necesitan 
+                                los métodos de especificación y reconocimiento de patrones, y estos métodos son principalmente las expresiones 
+                                regulares y los autómatas finitos. Sin embargo, un analizador léxico también es la parte del traductor que maneja 
+                                la entrada del código fuente, y puesto que esta entrada a menudo involucra un importante gasto de tiempo, el analizador 
+                                léxico debe funcionar de manera tan eficiente como sea posible.</p> 
+
+                                <p><br />Son pocos los errores simplemente en el nivel léxico ya que tiene una visión muy restringida de un programa fuente. 
+                                    El analizador léxico debe devolver el componente léxico de un identificador y dejar a otra fase se ocupe de los errores.</p>
+
+                                    <p><br />El compilador tiene que:</p>
+                                    <p>*Reportar clara y exactamente la presencia de errores</p>
+                                        <p>*Recuperarse de cada error lo suficientemente rápido para poder detectar errores subsiguientes:</p>
+                                        <p>*Tratar de evitar mensajes falsos de error.</p>
+                                        <p>*Un error que produce un token erróneo.</p>
+                                        <p>*Errores léxicos posibles.</p>
+
+                            <h3 class="subtitulo"><br />4.5 Generadores de analizadores léxicos.</h3>
+                        <p>Un analizador léxico es un modo destinado a leer caracteres del archivo de entrada, donde se encuentra la 
+                            cadena a analizar, reconocer subcadenas que correspondan a símbolos del lenguaje y retornar 
+                            los tokens correspondientes y sus atributos.</p> 
+                            <h3 class="cadena"><br />Generador LEX:</h3>
+                            <p>Es un programa para generar analizadores léxicos, se utiliza comúnmente con el programa 
+                                yacc que se utiliza para generar análisis sintáctico, escrito originalmente por Eric Schmidt y 
+                                Mike Lesk, es el analizador léxico estándar de POSIX. Lex toma como entrada una especificación de 
+                                analizador léxico y devuelve como salida el código fuente implementando el analizador léxico en C.</p>
+                                <div class="img">
+                                <img src="img/LEX.jpg" alt="" class="">
+                               </div>
+
+
+
+
+                            <h3 class="subtitulo"><br />4.6 Aplicaciones (caso de estudio).</h3>
+                        <p>Además de para construir compiladores e intérpretes, los analizadores léxicos se pueden emplear 
+                            para muchos programas \convencionales”. Los ejemplos más claros son aquellos programas que tienen 
+                            algún tipo de entrada de texto donde hay un formato razonablemente libre en cuantos espacios y comentarios. 
+                            En estos casos es bastante engorroso controlar donde empieza y termina cada componente y es fácil liarse 
+                            con los punteros a char. Un analizador léxico simplifica notablemente la interfaz y si se dispone de un 
+                            generador automático, el problema se resuelve en pocas líneas de código..</p> 
+                            <div class="img">
+                                <img src="img/LEX2.png" alt="" class="">
+                               </div>
+
+                            <h2 class="sobre-nosotros">5.- Análisis Sintáctico</h2>
+                           
+                            <h3 class="subtitulo"><br />5.1 Definición y clasificación de gramáticas.</h3>
+                            <p>En el campo de la informática, el concepto de Gramática Formal adquirió gran importancia 
+                                para el desarrollo de lenguajes de programación, consiguientemente el desarrollo de autómatas 
+                                y máquinas de Turing cobró vida en las últimas décadas, fortaleciendo el vínculo entre 
+                                Electrónica e Informática, creando máquinas cada vez más sofisticadas y menos complicadas para el usuario final.</p> 
+
+                                <h3 class="cadena"><br />Simbolo</h3>
+                              <p>Es una entidad abstracta, que no se va a definir. Normalmente los símbolos son letras (a,b,c,…z), dígitos (0,1,2…9) y otros caracteres (+,*,/,-,?...).
+                                Un símbolo también puede estar formado por varias letras o caracteres, como las palabras reservadas de un lenguaje de programación son símbolos de dicho lenguaje. Ejemplo:
+                                -   a,b,c,#,+,-,*, then, begin, end, else, …</p>
+
+
+
+                                <h3 class="cadena"><br />Vocabulario o Alfabeto</h3>
+                               <p> Un vocabulario o alfabeto es un conjunto finito de símbolos, no vacío. Para definir que un símbolo a pertenece a un alfabeto V, se utiliza la siguiente notación aÃŽV.
+                                Los alfabetos se definen por enumeración de los símbolos que contienen, podemos ver los siguientes ejemplos:</p>
+                                
+                                <p><br />·   V1={A,B,C,D,E,F,…..,X,Y,Z}
+                                   <p> ·   V2={a,b,c,d,0,1,2,3,4,*,#,+}</p>
+                                   <p>·   V3={0,1}</p>
+                                    <p>·   V4={if, then, begin, end, else, a,b,;,=,>}</p>
+                                    <p>·   También se pueden definir las tablas ASCII y EBCDIC como los alfabetos de distintos ordenadores.</p>
+
+                                <h3 class="cadena"><br />Cadena</h3>
+                             <p>Una cadena es una secuencia finita de símbolos de un determinado alfabeto.
+                                 Ejm. Tomando en cuenta los alfabetos o vocabularios definidos anteriormente, podemos decir que:</p>
+                                 <p><br />abcb es una cadena del alfabeto V2</p>
+                                    <p>a+2*b es una cadena del alfabeto V2</p>
+                                    <p>000111 es una cadena del alfabeto V3</p>
+                                    <p>If a>b then b=a; es una cadena del alfabeto V4</p>
+    
+                                <h3 class="subtitulo"><br />5.2 Gramáticas libres de contexto (GLC).</h3>
+                            <p>Gramáticas Libres de Contexto (GLC), o de tipo 2: las reglas son de la forma X → α, donde 
+                                X es una variable y α es una cadena que puede contener variables y constantes. Estas gramáticas 
+                                producen los lenguajes Libres de Contexto (abreviado “LLC”).</p> 
+                                <p><br />Capturan la noción de constituyente sintáctico y la noción de orden.</p>
+                                    <p>Herramienta formal que puede ser vista tanto desde un punto de vista generador como estructurador.</p>
+                                    <p>Propiedades computacionales interesantes: se puede reconocer en tiempo polinómico.</p>
+
+                                    <p><br />Una Gramática Libre de Contexto es una tupla con 4 parámetros:</p>
+                                    <p>*G = (V, T, P, S)</p>
+                                        <p>*V – conjunto de símbolos variables</p>
+                                       <p>*T – conjunto de símbolos terminales</p>
+                                        <p>*S Є V, símbolo inicial</p>
+                                        <p>*P – conjunto de reglas de producción: A → α, con α sucesión de símbolos de V U T, eventualmente vacía (α = ε)</p>
+
+                                        <p><br />Una GLC es un dispositivo generador.</p>
+                                            <p>Definimos el lenguaje LG generado por una gramática G del siguiente modo: 
+                                                G = { w / S →* w } , siendo ⇒* una “especie” de clausura transitiva de → y w una tira de terminales</p>
+                                            
+    
+                                <h3 class="subtitulo"><br />5.3 Árboles de derivación.</h3>
+                            <p>Es una representación gráfica (en forma de árbol invertido) de un proceso de derivación en una gramática. 
+                                Se define el árbol de derivación como sigue:</p> 
+
+                                <p><br />*la raíz del árbol será el símbolo inicial de la gramática</p>
+                                    <p>*los nodo interiores del árbol están etiquetados por los símbolos no terminales</p>
+                                    <p>*las hojas están etiquetadas por símbolos terminales</p>
+                                    <p>*si un nodo interior etiquetado por A, posee como hijos los nodos etiquetados por X1,X2, …Xn , entonces A→ X1,X2, …Xn 
+                                        es una producción de la gramática, en donde Xi , representa símbolo terminal o no terminal.</p>
+                                        <h3 class="cadena"><br />Sea la siguiente gramática:</h3>
+                                           <p>G=( Σ={a, b}, N={S,A,B},S P ) P: S→aABAa , A→ε |aA , B→ε|bB la construcción de un árbol de derivación 
+                                               en el proceso de la generación de la palabra aa es el siguiente:</p>
+                                               <div class="img">
+                                               <img src="img/arbol.JPG" alt="" class="">
+                                               </div>
+    
+                                <h3 class="subtitulo"><br />5.4 Formas normales de chomsky.</h3>
+                            <p>Una gramática formal está en Forma normal de Chomsky si todas sus reglas de producción son de alguna de las siguientes formas:</p> 
+                            <p><br />A → BC o</p>
+                                <p>A → a o</p>
+                               <p><br />donde A, B y C son símbolos no terminales (o variables) y α es un símbolo terminal.</p>
+                               <p><br />Todo lenguaje independiente del contexto que no posee a la cadena vacía, es expresable por medio 
+                                de una gramática en forma normal de Chomsky (GFNCH) y recíprocamente. Además, dada una gramática independiente 
+                                del contexto, es posible algorítmicamente producir una GFNCH equivalente, es decir, que genera el mismo lenguaje.</p>
+ 
+                                 <p><br />Sea G = (∑ N, ∑T, P, $) una gramática con P ⊂ ∑N X (∑N U ∑T)* y X Є ∑N un símbolo no-terminal (o una variable). 
+                                     <p>Podemos clasificar tales símbolos X en tres clases:</p>
+
+                                    <h3 class="cadena"><br />Variables accesibles:</h3>
+                                     <p>Si existe una derivación desde el símbolo inicial que contiene X, es decir, existe $ → * α Xβ donde α, β Є∑*</p>
+
+                                    <h3 class="cadena"><br />Variables generativas:</h3>
+                                    <p>Si existe una derivación desde el la variable que produce una sentencia , es decir, existe X →* ω donde ω Є *T.</p>
+
+                                    <h3 class="cadena"><br />Variables útiles:</h3>
+                            <p>Si existe una derivación desde el símbolo inicial usando que produce una sentencia ω, es decir, existe $ →* α X β →*ω donde α, β Є ∑* y ω Є ∑*T.</p>
+
+                                <h3 class="subtitulo"><br />5.5 Diagramas de sintaxis.</h3>
+                            <p>Los diagramas sintácticos, de sintaxis o diagramas del ferrocarril son una forma de representar una gramática libre de contexto. 
+                                Representan una alternativa gráfica para la Forma de Backus-Naur (BNF, por sus siglas en inglés) o la Forma Extendida de Backus-Naur 
+                                (EBNF, por sus siglas en ingles)..</p> 
+                                <p><br />Los diagramas de ferrocarril son más comprensibles para la mayoría de la gente. Alguna parte de la popularidad del formato 
+                                    de intercambio de datos JSON se debe a su representación en los diagramas de ferrocarril.</p>
+                                    <p><br />Un segundo método alternativo para desplegar las producciones de ciertas gramáticas de tipo 2 es el diagrama de sintaxis. 
+                                        Ésta es una imagen de las producciones que permite al usuario ver las sustituciones en forma dinámica, es decir, verlas 
+                                        como un movimiento a través del diagrama. En la figura 10.5 se ilustrará los diagramas que resultan de la traducción 
+                                        de conjuntos de producciones típicos, que son, por lo general, todas las producciones que aparecen en el lado derecho de algún enunciado BNF.</p>
+
+                                <h3 class="subtitulo"><br />5.6 Eliminacion de la ambigüedad.</h3>
+                            <p>Una GLC es ambigua si existe una cadena w Є L(G) que tiene más de una derivación por la izquierda o más de una derivación 
+                                por la derecha o si tiene dos o más arboles de derivación .</p> 
+                                <p><br />En casi de y que toda cadena w Є L (G) tenga un único árbol de derivación no es ambigua.</p>
+                                <p><br />Ejemplo: La gramática S → aS| Sa | a es ambigua porque aa tiene dos derivaciones por la izquierda S Þ aS Þ aa S Þ Sa Þ aa.</p>
+                                <div class="img">
+                                    <img src="img/amb.png" alt="" class="">
+                                    </div>
+
+                                    <h3 class="cadena"><br />Tipos de Ambigüedad</h3>
+                                    <p>Ambiguedad Inherente</p>
+                                    <p>Las gramáticas que presentan este tipo de ambigüedad no pueden utilizarse para lenguajes de programación, ya que por más transformaciones que se realicen sobre ellas, nunca se podrá eliminar completamente la ambigüedad que presentan.
+                                        Un lenguaje L es inherentemente ambiguo si todas sus gramáticas son ambiguas; si existe cuando menos una gramática no ambigua para L, L no es
+                                        ambiguo.</p>
+                                        <p>– El lenguaje de las expresiones no es Ambiguo</p>
+                                            <p>– Las expresiones regulares no son ambiguas</p>
+
+                                    <p><br />Ambigüedad Transitoria</p>
+                                    <p>Este tipo de ambigüedad puede llegar a ser eliminada realizando una serie de transformaciones sobre la gramática original. Una vez que se logra lo anterior, la 
+                                        gramática queda lista para ser reconocida por la mayor parte de los analizadores sintácticos. (Se le considera "ambigüedad" porque existen métodos para realizar 
+                                        análisis sintáctico que no aceptan gramáticas con estas características)
+                                        Dónde se presenta la Ambigüedad Transitoria generalmente la ambigüedad se presenta cuando existen producciones con factores comunes 
+                                        (distintas alternativas para un símbolo no-terminal que inician de la misma forma); ó cuando existen producciones que son recursivas izquierdas 
+                                        (producciones para un símbolo no-terminal en las cuales el primer símbolo de su forma sentencial es ese mismo símbolo no-terminal).</p>
+                                    
+                                <h3 class="subtitulo"><br />5.7 Tipos de analizadores sintacticos.</h3>
+                            <p>Analizador Descendente:</p>
+
+                                <p>Se construye el árbol de análisis sintético partiendo del símbolo inicial y aplicando las producciones mediante 
+                                    derivaciones por la izquierda, el símbolo a expandir es el que esta mas a la izquierda.</p>
+                                
+                                <p><br />Analizador Ascendente:</p>
+                                
+                                <p>Se construye el árbol de análisis sintético partiendo de la frase a reconocer y aplicando las producciones mediante reducciones hasta llegar al símbolo inicial de la gramática.
+                                Ejemplo:</p>
+                                
+                                <p><br />G= ({+,*, ID, (,)}, {E, T, P},E, P)P={E:=E+T | T; T:=T*P | P; P:= ID | (E) }FraseID + ( ID * ID )</p>
+                                
+                                <p><br />Ejemplo:</p>
+                                
+                                <p>G= ({+,*, ID, (,)}, {E, T, P},E, P)P={E:=E+T | T; T:=T*P | P; P:= ID | (E) }FraseID + ( ID * ID ).</p> 
+    
+                                <h3 class="subtitulo"><br />5.8 Generación de matriz predictiva (cálculo first y follow).</h3>
+                            <p>FIRST: Sea G := (V; ∑; Q0; P) una gramática libre de contexto. Para cada forma sentencial α Є (V U ∑)* y para cada k Є N definiremos la función.</p> 
+                            <div class="img">
+                                <img src="img/func.JPG" alt="" class="">
+                                </div>
+ 
+                                 <p>En otras palabras, el operador F IRST k asocia a cada forma sentencial los primeros k símbolos de cualquier forma terminal 
+                                     alcanzable desde α mediante derivaciones “masa la izquierda".</p>
+
+                                    <p><br />FOLLOW: Con las mismas notaciones anteriores, para cada forma sentencial α Є (V U ∑)*  definiremos la función 
+                                        FOLLOWG GK (α) del modo siguiente.</p>
+                                    
+                                    
+                                    
+                                    <p><br />De nuevo nos ocuparemos solamente de FOLLOW: = FOLLOW1. Obsérvese que FOLLOW k (α) ⊂ ∑* y que para cada x Є FOLLOW 
+                                        (α), Ixl ≤ k. Obsérvese que para cada variable A Є V, FOLLOW(A) son todos los símbolos terminales que pueden 
+                                        aparecer a la derecha de A en alguna forma sentencial de la gramática.</p>
+
+                                    
+
+                                <h3 class="subtitulo"><br />5.9 Manejo de errores.</h3>
+                            <p>Un compilador es un sistema que en la mayoría de los casos tiene que manejar una entrada incorrecta. Sobre todo en las primeras 
+                                etapas de la creación de un programa, es probable que el compilador se utiliza para efectuar las características que debería 
+                                proporcionar un buen sistema de edición dirigido por la sintaxis, es decir, para determinar si las variables han sido declaradas 
+                                antes de usarla, o si faltan corchetes o algo así.</p> 
+
+                                <p><br />Por lo tanto, el manejo de errores es parte importante de un compilador y el escritor del compilador 
+                                    siempre debe tener esto presente durante su diseño.</p>
+                                    <p><br />Hay que señalar que los posibles errores ya deben estar considerados al diseñar un 
+                                        lenguaje de programación. Por ejemplo, considerar si cada proposición del lenguaje de 
+                                        programación comienza con una palabra clave diferente (excepto la proposición de 
+                                        asignación, por supuesto). Sin embargo, es indispensable lo siguiente:</p>
+                                        <p><br />El compilador debe ser capaz de detectar errores en la entrada:</p>
+                                        <p>*El compilador debe recuperarse de los errores sin perder demasiada información</p>
+                                    <p>*Y sobre todo, el compilador debe producir un mensaje de error que permita al programador 
+                                        encontrar y corregir fácilmente los elementos (sintácticamente) incorrectos de su programa.</p>
+    
+                                <h3 class="subtitulo"><br />5.10 Generadores de analizadores  sintácticos.</h3>
+                            <p>ANTLR:</p>
+                                <p>(ANother Tool for Language Recognition; en español "otra herramienta para reconocimiento de lenguajes") 
+                                es una herramienta creada principalmente por Terence Parr, que opera sobre lenguajes, proporcionando un marco 
+                                para construir reconocedores (parsers), intérpretes, compiladores y traductores de lenguajes a partir de las 
+                                descripciones gramaticales de los mismos (conteniendo acciones semánticas a realizarse en varios lenguajes de programación).</p> 
+
+                                <p><br />GNU bison:</p>
+                                    <p>Es un programa generador de analizadores sintácticos de propósito general perteneciente al proyecto 
+                                    GNU disponible para prácticamente todos los sistemas operativos, se usa normalmente acompañado de flex 
+                                    aunque los analizadores léxicos se pueden también obtener de otras formas.</p>
+                                    
+                                    <p><br />Grammatica:</p>
+                                    <p>Es un generador de analizadores sintácticos de C# y Java libre. Es similar a otras herramientas 
+                                        como Yacc o ANTLR. Grammatica soporta el algoritmo LL(k) para gramáticas con un número ilimitado 
+                                        de tokens de anticipación. Está bastante bien probado, y ha sido auto compilado desde la versión 0.1. 
+                                        La documentación contiene una lista completa de características, así como una comparación con otros generadores de analizadores.</p>
+                                    
+                                    <p><br />JavaCC:</p>
+                                    <p>(Java Compiler Compiler) es un generador de analizadores sintácticos de código abierto para el lenguaje de 
+                                    programación Java. JavaCC es similar a Yacc en que genera un parser para una gramática presentada en notación BNF, con la 
+                                    diferencia de que la salida es en código Java. A diferencia de Yacc, JavaCC genera analizadores descendentes (top-down), 
+                                    lo que lo limita a la clase de gramáticas LL (K) (en particular, la recursión desde izquierda no se puede usar). 
+                                    El constructor de árboles que lo acompaña, JJTree, construye árboles de abajo hacia arriba (bottom-up).</p>
+                                    
+                                    <p><br />Yacc:</p>
+                                    <p>Es un programa para generar analizadores sintácticos. Las siglas del nombre significan Yet Another Compiler-Compiler, 
+                                    es decir, "Otro generador de compiladores más". Genera un analizador sintáctico (la parte de un compilador 
+                                    que comprueba que la estructura del código fuente se ajusta a la especificación sintáctica del lenguaje) 
+                                    basado en una gramática analíticaescrita en una notación similar a la BNF. Yacc genera el código para el analizador 
+                                    sintáctico en el Lenguaje de programación C.</p>
+
+                                <h2 class="sobre-nosotros">6.- Máquinas de Turing.</h2>
+                                <h3 class="subtitulo"><br />6.1 Definicion formal MT.</h3>
+                                <p>La Máquina de Turing (MT) fue introducida por Alan M. Turing en 1936, y puede considerarse como un 
+                                    modelo abstracto que formaliza la idea Intuitiva de algoritmo..</p> 
+                                    <div class="img">
+                                        <img src="img/turing.jpg" alt="" class="">
+                                        </div>
+                                        <p>(MT) Es un modelo computacional que realiza una lectura/escritura de manera automática sobre una 
+                                            entrada llamada cinta, generando una salida en esta misma. Este modelo está conformado por un 
+                                            alfabeto de entrada y uno de salida, un símbolo especial llamado blanco (normalmente b, Δ o 0), 
+                                            un conjunto de estados finitos y un conjunto de transiciones entre dichos estados.</p>
+
+                                            <p><br />Su funcionamiento se basa en una función de transición, que recibe un estado inicial y una 
+                                                cadena de caracteres (la cinta, la cual es finita por la izquierda) pertenecientes al alfabeto de 
+                                                entrada. Luego va leyendo una celda de la cinta , borrando el símbolo , escribir el nuevo símbolo 
+                                                perteneciente al alfabeto de salida y finalmente avanza a la izquierda o a la derecha (solo una celda a la vez), 
+                                                repitiendo esto según se indique en la función de transición, para finalmente detenerse en un estado final o de aceptación, 
+                                                representando así la salida.</p>
+                                                <div class="img">
+                                                    <img src="img/tur.PNG" alt="" class="">
+                                                    </div>
+        
+                                    <h3 class="subtitulo"><br />6.2 Construcción modular de una MT.</h3>
+                                <p>El objetivo de la creación modular de una maquina de Turing es poder desarrollar máquinas complejas a partir de bloques 
+                                    elementales, a partir de maquinas más pequeñas, mediante diagramas de transiciones. La construcción de máquinas de Turing 
+                                    se lleva a cabo mediante los diagramas de transición y combinarlos de manera parecida a lo que se realiza en la formación 
+                                    de la unión y concatenación de los autómatas finitos.</p> 
+                                    <h3 class="cadena"><br />Pasos para la construcción de una máquina de Turing:</h3>
+                                    <p>1. Elimine las características de inicio de los estados iniciales de las maquinas, 
+                                        excepto la de aquel donde iniciara la maquina compuesta.</p>
+
+                                        <p>2. Elimine las características de detención de los estados de parada de todas la maquinas e 
+                                            introduzca un nuevo estado de parada que nos se encuentre en ninguno de los diagramas que se combinan.</p>
+                                        
+                                        <p>3. Para cada uno de los antiguos estados de parada p y cada x en y.</p>
+                                        
+                                        <p><br />Ejemplificación de dicha construcción.</p>
+                                        <div class="img">
+                                            <img src="img/MT.JPG" alt="" class="">
+                                            </div>
+
+                                    <h3 class="subtitulo"><br />6.3 Lenguajes aceptados por la MT.</h3>
+                                <p>Una máquina de Turing se puede comportar como un aceptador de un lenguaje. Si colocamos una cadena w en la cinta, 
+                                    situamos la cabeza de lectura/escritura sobre el símbolo del extremo izquierdo de la cadena w y ponemos en marcha 
+                                    la  máquina a partir  de su estado inicial. Entonces w es aceptada si, después de una secuencia de movimientos, 
+                                    la máquina de Turing llega a un estado final y para. Por tanto w es aceptada. Si qw  *  w1pw2 para algún 
+                                    estado final p y unas cadenas w1 y w2.</p> 
+                                    <p><br />Entonces, se obtiene la siguiente definición:</p>
+                                    <p>Sea M = (Q, S , G, q0=q1, B, F, d) una máquina de Turing. Entonces el lenguaje aceptado por 
+                                        M es: L(M) = {wÎ S*½q1w   *   w1pw2 para pÎF y wiÎG*}.</p>
+
+                                        <p><br />Los lenguajes formales que son aceptados por una máquina de Turing son exactamente aquellos que pueden 
+                                            ser generados por una gramática formal. El cálculo Lambda es una forma de definir funciones. Las funciones 
+                                            que pueden se computadas con el cálculo Lambda son exactamente aquellas que pueden ser computadas con una máquina de Turing.</p>
+                                            
+
+
+        </section>
+        <section class="fondo">
+            <div class="sesgoarriba"></div>
+            <div class="contenedor">
+                <h2 class="titulo-patrocinadores">Developed by:</h2>
+
+                <h2 class="sobre-nosotros">Alfredo Romero Silva</h2>
+                <h2 class="sobre-nosotros">German Pedroza Sanchez</h2>
+                <h2 class="sobre-nosotros">Arnold Tristan Alva Estrada</h2>
+                <div class="img">
+                <img src="img/tesvg.png" alt="" class="">
+            </div>
+            </div>
+           
+
+
+
+
+
+
+
+
+            
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
